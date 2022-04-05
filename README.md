@@ -8,39 +8,62 @@
 
 <br/> 
 
-## Entity
-### 玩家狀態
+## Domain - App
+### Entity
 - 金幣
-- 收集冊
-
-### 遊戲基本狀態
-- 盤面目標
-- 盤面紀錄
-- 是否能點擊
-
-### 遊戲經典模式狀態
-- 支援次數
+### UseCase
+- 載入使用者資料
 
 <br/> 
 
-## UseCase
-### 收集
-- 瀏覽收集冊
-- 透過消耗金幣解鎖收集項目
+## Domain - Setting
+### Entity
 
-### 設定
+### UseCase
 - 調整聲音
 - 切換語言
 
-### 遊戲基本
+<br/> 
+
+## Domain - Collection
+### Entity
+- 收集冊
+### UseCase
+- 瀏覽收集冊
+- 檢查金幣是否足夠解鎖
+- 消耗金幣解鎖收集項目
+
+<br/> 
+
+## Domain - GameBase
+### Entity - GameBaseModel
+- 是否能點擊
+### Entity - MatchCore
+- 盤面目標
+- 盤面紀錄
+- 生成/選擇
+
+### UseCase
 - 改變遊戲狀態( Retry / New Round / Back Lobby )
 - 建置盤面
 - 選擇目標
 
-### 遊戲經典模式
+<br/> 
+
+## Domain - GameClassic
+### Entity
+- 支援次數
+### UseCase
 - 選擇模式參數
 - 支援(次數限制/期間禁止選擇)
 
-### 遊戲對戰模式
+<br/> 
+
+## Domain - GameBattle
+### Entity
+
+### UseCase
 - 選擇模式參數
 - 干擾
+
+<br/> 
