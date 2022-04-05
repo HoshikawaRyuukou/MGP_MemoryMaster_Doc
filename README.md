@@ -37,17 +37,17 @@
 <br/> 
 
 ## Domain - GameBase
-### Entity - GameBaseModel
-- 是否能點擊
 ### Entity - MatchCore
+- 是否允許選擇
 - 盤面目標
 - 盤面紀錄
-- 生成/選擇
+- 生成
+- 選擇
 
 ### UseCase
-- 改變遊戲狀態( Retry / New Round / Back Lobby )
+- 改變遊戲狀態( Retry / New / Finish )
 - 建置盤面
-- 選擇目標
+- 選擇格子 (定義選擇完成)
 
 <br/> 
 
@@ -55,8 +55,8 @@
 ### Entity
 - 支援次數
 ### UseCase
-- 選擇模式參數
-- 支援(次數限制/期間禁止選擇)
+- 設置模式參數
+- 支援 (次數限制/期間禁止選擇)
 
 <br/> 
 
@@ -64,7 +64,7 @@
 ### Entity
 
 ### UseCase
-- 選擇模式參數
+- 設置模式參數
 - 干擾
 
 <br/> 
