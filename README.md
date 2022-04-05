@@ -18,7 +18,8 @@
 
 ## Domain - Setting
 ### Entity
-
+- 靜音
+- 語言
 ### UseCase
 - 調整聲音
 - 切換語言
