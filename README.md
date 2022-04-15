@@ -15,6 +15,7 @@
 
 ### Entity - User
 - 金幣
+- 收集冊
 
 ### UseCase
 |  Name  | Description  |
@@ -28,18 +29,6 @@
 
 <br/> 
 
-## Domain - Collection
-### Entity
-- 收集冊
-### UseCase
-- 瀏覽收集冊
-- 檢查金幣是否足夠解鎖
-- 消耗金幣解鎖收集項目
-
-<br/> 
-
-
-
 ## Domain - GameBase
 ### Entity - Round
 - 生成盤面 ID
@@ -52,9 +41,11 @@
 - 高階隨機 (根據紀錄/正確率)
 
 ### UseCase
-- ConfirmBoard 確認盤面參數
-- BuildBoard 建置盤面
-- ControlGame 封裝共同遊戲狀態請求 ( Retry / New / Finish )
+|  Name  | Description  |
+| :- | :- |
+| ConfirmBoard | 確認盤面參數 |
+| BuildBoard | 建置盤面 |
+| ControlGame | 封裝共同遊戲狀態請求 ( Retry / New / Finish ) |
 
 <br/> 
 
