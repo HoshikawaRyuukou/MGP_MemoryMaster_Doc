@@ -36,13 +36,18 @@
 
 <br/> 
 
+
+
 ## Domain - GameBase
-### Entity - MatchCore
-- 是否允許選擇
-- 盤面目標
+### Entity - Round
+- 生成盤面 ID
+- 查詢 ID 
+- 操作 ID ( Select / Match )
+
+### Entity - History
 - 盤面紀錄
-- 生成
-- 選擇
+- 隨機取數 (特化結構 RandomizedSet.Random BigO(1))
+- 高階隨機 (根據紀錄/正確率)
 
 ### UseCase
 - 改變遊戲狀態( Retry / New / Finish )
