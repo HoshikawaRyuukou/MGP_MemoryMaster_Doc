@@ -9,20 +9,22 @@
 <br/> 
 
 ## Domain - App
-### Entity
-- 金幣
-### UseCase
-- 載入使用者資料
-
-<br/> 
-
-## Domain - Setting
-### Entity
+### Entity - AppSetting
 - 靜音
 - 語言
+
+### Entity - User
+- 金幣
+
 ### UseCase
-- 調整聲音
-- 切換語言
+|  Name  | Description  |
+| :- | :- |
+| ControlSound | 調整聲音 |
+| ChangeLanguage | 切換語言 |
+| LoadUser | 載入使用者資料 |
+| AccessCoin | 存取金幣 |
+| AccessCollectionBook | 存取收集冊 |
+| UnlockCollectionBookByCoin | 使用金幣解鎖收集項目 |
 
 <br/> 
 
@@ -50,9 +52,9 @@
 - 高階隨機 (根據紀錄/正確率)
 
 ### UseCase
-- 改變遊戲狀態( Retry / New / Finish )
-- 建置盤面
-- 選擇格子 (定義選擇完成)
+- ConfirmBoard 確認盤面參數
+- BuildBoard 建置盤面
+- ControlGame 封裝共同遊戲狀態請求 ( Retry / New / Finish )
 
 <br/> 
 
