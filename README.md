@@ -99,20 +99,5 @@
 
 <br/> 
 
-## Domain - GameClassic
-### Entity
-- 支援次數
-### UseCase
-- 設置模式參數
-- 支援 (次數限制/期間禁止選擇)
 
-<br/> 
 
-## Domain - GameBattle
-### Entity
-
-### UseCase
-- 設置模式參數
-- 干擾
-
-<br/> 
