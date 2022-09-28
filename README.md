@@ -30,5 +30,10 @@
 - Create/ Start/ Pick/ Stop
 - Created/ TurnChanged/ Marked/ Grouped/ Tricked/ Clear/ Stopped
 
+### Flow
+- 選擇Option
+- 創建遊戲
+- 玩家/NPC/Trick
+
 
 
