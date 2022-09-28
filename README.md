@@ -25,79 +25,10 @@
 - 與 NPC 進行回合制點擊
 - 搗蛋鬼 : 給隔幾次配對會將兩個 Cell 做交換，增加記憶難度 
 
------------------------------------------------
-
-
-
-
-
-
-
-
-#### 點擊格子
-- 輸入 : 格子 index 
-- 輸出 : 
-  - Failed : 玩家禁止輸入 / index已經被選
-  - Resulted : 格子Index
-- 步驟 :
-  1. 檢查index狀態
-  2. GameCore select操作
-
-#### 配對格子
-- 輸入 : 格子 indices 
-- 輸出 : 
-  - Resulted : isMatched / indices
-- 步驟 :
-  1. 檢查
-
-
-#### 翻轉支援(次數限制)
-- 輸入 : 支援 On/Off
-- 輸出 : 
-  - Resulted : isOn / Count
-- 步驟 :
-  1. 檢查isOn狀態 / 檢查次數
-  2. 成立則扣除次數 (isOn: False -> True)
-
-
-<br/> 
-
-
-
-
-## Domain - App
-### Entity - AppSetting
-- 靜音
-- 語言
-
-### Entity - User
-- 金幣
-- 收集冊
-
-### UseCase
-
-
-<br/> 
-
-## Domain - GameBase
-### Entity - Round
-- 生成盤面 ID
-- 查詢 ID 
-- 操作 ID ( Select / Match )
-
-### Entity - History
-- 盤面紀錄
-- 隨機取數 (特化結構 RandomizedSet.Random BigO(1))
-- 高階隨機 (根據紀錄/正確率)
-
-### UseCase
-|  Name  | Description  |
-| :- | :- |
-| ConfirmBoard | 確認盤面參數 |
-| BuildBoard | 建置盤面 |
-| ControlGame | 封裝共同遊戲狀態請求 ( Retry / New / Finish ) |
-
-<br/> 
+## Battle
+### Game
+- Create/ Start/ Pick/ Stop
+- Created/ TurnChanged/ Marked/ Grouped/ Tricked/ Clear/ Stopped
 
 
 
