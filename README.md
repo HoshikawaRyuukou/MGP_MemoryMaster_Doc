@@ -35,5 +35,11 @@
 - 創建遊戲
 - 玩家/NPC/Trick
 
+### Game 域規則
+- 一次Group互動(Pick Unit次)
+- 終極目標是讓 GameState isClear false -> true 
+- 當全部Cell matched 為結束
 
+### 思考
+- 玩家/NPC點擊次數是域規則? | 不是，可以是玩家點4次換npc點2次
 
