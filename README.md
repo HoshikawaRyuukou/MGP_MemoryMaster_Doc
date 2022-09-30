@@ -30,15 +30,39 @@
 - Create/ Start/ Pick/ Stop
 - Created/ TurnChanged/ Marked/ Grouped/ Tricked/ Clear/ Stopped
 
-### Flow
-- 選擇Option
-- 創建遊戲
-- 玩家/NPC/Trick
 
-### Game 域規則
-- 一次Group互動(Pick Unit次)
-- 終極目標是讓 GameState isClear false -> true 
-- 當全部Cell matched 為結束
+## GameCore 域規則
+
+### 核心域(VO) BoardOption
+* groupUnit / groupCount
+
+### 核心域 Board
+* size = groupUnit x groupCount
+* 總共具有 size個 Cell
+* Cell的狀態: Idle/ Marked/ Matched
+* 最多只能有 groupUnit個Cells 處於 Marked
+* 使用 Group來將 Marked -> Idle or Matched
+* Action: Create/ MarkCell
+
+## BattleGame 
+### 核心域 Game
+* 有1個 Board / 1個 Player / 1個NPC /1個Tricker/ 1個BoardNote / 1個 Turn
+* Board(Clear) -> Game(Clear) 
+* 將Board事件紀錄於 BoardNote
+
+### 核心域 Player
+* 有1個 Board / PlayerState
+* 接受 index輸入 做Pick
+
+### 核心域 NPC
+* 有1個 Board / 1個 BoardNote
+* NPC查 Note 做 Pick
+
+### 輔助域 Tricker
+* 有1個 Board / 1個 Turn
+* 每當 Turn.Count 為X的倍數時成立
+* Trick 為選出兩個 cell(Index) 做交換 / 這裡只是選出沒有實際交換，交換的動作是表示層的行為
+
 
 ### 思考
 - 玩家/NPC點擊次數是域規則? | 不是，可以是玩家點4次換npc點2次
