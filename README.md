@@ -25,45 +25,40 @@
 - 與 NPC 進行回合制點擊
 - 搗蛋鬼 : 給隔幾次配對會將兩個 Cell 做交換，增加記憶難度 
 
-## Battle
-### Game
-- Create/ Start/ Pick/ Stop
-- Created/ TurnChanged/ Marked/ Grouped/ Tricked/ Clear/ Stopped
+--------------------------------
+
+## Domain
+### Board
+* Board size = groupUnit x groupCount
+* Board cellState: Idle/ Marked/ Matched
+* Board 最多只能有 groupUnit 個 cell(Marked)
+* Board 所有 cell(Matched) 為 clear
+
+### GameSolver
+- 包含多個 GameSolvePolicy，其中一個成立即結束
+
+### GameSolvePolicy
+- 判定遊戲是否結束
+
+### Game (Root)
+- Pick(index, playerID)
+
+### Tricker
 
 
-## GameCore 域規則
 
-### 核心域(VO) BoardOption
-* groupUnit / groupCount
+### Rule
+* 遊戲參數 groupUnit, groupCount, playerFirst, npcLevel, trickLevel
+* 遊戲對象 Board, Tricker, Player, NPC
+* 核心概念 Player-NPC 分別操作，直到 Board 為空
+* Player 與 NPC 操作完成，則 Tricker 計數+1
+* Tricker 計數為 X的倍數時 Trick 成立
 
-### 核心域 Board
-* size = groupUnit x groupCount
-* 總共具有 size個 Cell
-* Cell的狀態: Idle/ Marked/ Matched
-* 最多只能有 groupUnit個Cells 處於 Marked
-* 使用 Group來將 Marked -> Idle or Matched
-* Action: Create/ MarkCell
 
-## BattleGame 
-### 核心域 Game
-* 有1個 Board / 1個 Player / 1個NPC /1個Tricker/ 1個BoardNote / 1個 Turn
-* Board(Clear) -> Game(Clear) 
-* 將Board事件紀錄於 BoardNote
 
-### 核心域 Player
-* 有1個 Board / PlayerState
-* 接受 index輸入 做Pick
 
-### 核心域 NPC
-* 有1個 Board / 1個 BoardNote
-* NPC查 Note 做 Pick
 
-### 輔助域 Tricker
-* 有1個 Board / 1個 Turn
-* 每當 Turn.Count 為X的倍數時成立
-* Trick 為選出兩個 cell(Index) 做交換 / 這裡只是選出沒有實際交換，交換的動作是表示層的行為
-
+----------------------------------------
 
 ### 思考
 - 玩家/NPC點擊次數是域規則? | 不是，可以是玩家點4次換npc點2次
-
