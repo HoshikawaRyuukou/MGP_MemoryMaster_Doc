@@ -34,31 +34,48 @@
 * Board 最多只能有 groupUnit 個 cell(Marked)
 * Board 所有 cell(Matched) 為 clear
 
+### Game (Root)
+- Board
+- Pick(index, playerID) => CellMarked, CellGrouped
+
+### Record
+- RecordClick(index, playerID)
+- RecordMatched(indices, playerID)
+
+### Tricker
+- 計數為 X的倍數時 Trick 成立
+
+### Scorer
+- 公式計算
+
+<br>
+
+## Application
+
+### PlayGame
+* Option, Game
+* 創建遊戲
+
+### GameHandler
+* Note, Tricker
+* CellPickRequested: 
+* CellMarked: Note/Record 紀錄
+* CellGrouped: Tricker 計數 / Note/Record 紀錄
+* GameCompleted:
+
+### EvaluateGame
+* Option, Record, Scorer, UerAPI
+* 根據 遊戲參數/遊戲紀錄 來計算分數，並給予獎勵
+
+----------------------------------------
+### 思考
+- 玩家/NPC點擊次數是域規則? | 不是，可以是玩家點4次換npc點2次
+- Scorer 跟 Game 有域的關聯嗎? | 沒有，沒有Scorer並不影響Game的運作，沒有評分的環節也無所謂，評分是屬於這個應用程序的機制
+
+-----------------------------------------
+### 備案 多結束條件
 ### GameSolver
 - 包含多個 GameSolvePolicy，其中一個成立即結束
 
 ### GameSolvePolicy
 - 判定遊戲是否結束
-
-### Game (Root)
-- Pick(index, playerID)
-
-### Tricker
-
-
-
-### Rule
-* 遊戲參數 groupUnit, groupCount, playerFirst, npcLevel, trickLevel
-* 遊戲對象 Board, Tricker, Player, NPC
-* 核心概念 Player-NPC 分別操作，直到 Board 為空
-* Player 與 NPC 操作完成，則 Tricker 計數+1
-* Tricker 計數為 X的倍數時 Trick 成立
-
-
-
-
-
-----------------------------------------
-
-### 思考
-- 玩家/NPC點擊次數是域規則? | 不是，可以是玩家點4次換npc點2次
