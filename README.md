@@ -1,70 +1,26 @@
-## 前述
+# MGP MemoryMaster Doc
 - 這是一個記憶配對遊戲
 - 減少操作中斷感(點-點-配對)
 - 難度調整(輔助/干擾)
 - 陪玩
 - 成就
 
--------------------------------------
+## Module
+* 本專案採用按組件打包(Package by Component)的方式
+* Components 與 Features 均遵守 Clean Architecture 分層/依賴關係
+* Component 主要的定位是**提供功能**
+* Feature 主要的定位是**提供使用者情境**
+
+## Components
+組件額外設置 API (Facade)，對組件操作一律只透過 API
+- Users 收集核心
+- Collections 收集核心
+- GameCore 遊戲核心
+
 ## Features
 - CollectionAlbum 收集冊
 - GameClassic 遊玩經典模式
 - GameBattle 遊玩對戰模式
-
-
-
-
-
-## Feature - 遊玩模式(共同項)
-- 開局詢問玩家遊玩選項
-- 配對成功擊獲得金幣 (玩家看到即時金幣狀態)
-- 結算成果獲得金幣
-- 重開新局/重玩/離開
-
-## Feature - 遊玩經典模式
-- 無間斷點擊 : 因為是單人操作且有計時數據，只要是反向的 Cell 就能點擊，以增加順暢感
-- 計次反轉輔助 : 將未配對的 Cell 翻正，但是翻正期間不能點擊
-
-## Feature - 遊玩對戰模式
-- 與 NPC 進行回合制點擊
-- 搗蛋鬼 : 給隔幾次配對會將兩個 Cell 做交換，增加記憶難度 
-
---------------------------------
-
-## Domain
-
-### Game (Root)
-- Board
-- Pick(index, playerID) => CellMarked, CellGrouped
-
-### Record
-- RecordClick(index, playerID)
-- RecordMatched(indices, playerID)
-
-### Tricker
-- 計數為 X的倍數時 Trick 成立
-
-### Scorer
-- 公式計算
-
-<br>
-
-## Application
-
-### PlayGame
-* Option, Game
-* 創建遊戲
-
-### GameHandler
-* Note, Tricker
-* CellPickRequested: 
-* CellMarked: Note/Record 紀錄
-* CellGrouped: Tricker 計數 / Note/Record 紀錄
-* GameCompleted:
-
-### EvaluateGame
-* Option, Record, Scorer, UerAPI
-* 根據 遊戲參數/遊戲紀錄 來計算分數，並給予獎勵
 
 ----------------------------------------
 ### 思考
