@@ -6,10 +6,14 @@
 - 成就
 
 -------------------------------------
+## Features
+- CollectionAlbum 收集冊
+- GameClassic 遊玩經典模式
+- GameBattle 遊玩對戰模式
 
-## Feature - 收集冊
-- 使用者可以查看所擁有的圖像 ( Icon / Photo )
-- 使用者消耗金幣解鎖圖像
+
+
+
 
 ## Feature - 遊玩模式(共同項)
 - 開局詢問玩家遊玩選項
@@ -28,11 +32,6 @@
 --------------------------------
 
 ## Domain
-### Board
-* Board size = groupUnit x groupCount
-* Board cellState: Idle/ Marked/ Matched
-* Board 最多只能有 groupUnit 個 cell(Marked)
-* Board 所有 cell(Matched) 為 clear
 
 ### Game (Root)
 - Board
