@@ -1,4 +1,4 @@
-## Board
+* [Board](Board.md)
 
 ## GameCommon
 - 開局詢問玩家遊玩選項
