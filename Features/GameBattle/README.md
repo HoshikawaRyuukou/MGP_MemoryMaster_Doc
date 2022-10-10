@@ -1,7 +1,8 @@
 # GameBattle
-- 與 NPC 進行回合制點擊
-- 搗蛋鬼 : 給隔幾次配對會將兩個 Cell 做交換，增加記憶難度 
-
+- 主循環是以 Player 與 NPC 交互做 Pick
+- Pick 可能觸發 Trigger
+- Trigger - TrickSwap : 將兩個 Cell 做交換
+- Trigger - BonusPick : 額外獲得一次 Pick
 
 ## Domain
 
