@@ -13,14 +13,19 @@
 
 ## Components
 組件額外設置 API (Facade)，對組件操作一律只透過 API
-- Users 收集核心
 - Collections 收集核心
-- GameCore 遊戲核心
+- GameShared 遊戲共用邏輯
+- GameWidgets 遊戲共用元件
+- Settings 設定
+- Shared Component共用
+- Users 使用者
 
 ## Features
 - CollectionAlbum 收集冊
-- GameClassic 遊玩經典模式
+- Credit 致謝
 - GameBattle 遊玩對戰模式
+- GameClassic 遊玩經典模式
+- Support 支持
 
 ----------------------------------------
 ### 思考
