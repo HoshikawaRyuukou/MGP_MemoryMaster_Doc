@@ -4,21 +4,37 @@
 - Trigger - TrickSwap : 將兩個 Cell 做交換
 - Trigger - BonusPick : 額外獲得一次 Pick
 
-## Domain
+## Modules
 
-### Game (Root)
-- Board
-- Pick(index, playerID) => CellMarked, CellGrouped
+### GameCores
+- 操作以 Turn 的方式進行
+- 預設第一動為 Player/NPC Pick
+- Turn 執行期間觸發的 Command 將放入佇列中，並作為之後的 Turn 執行
+- 當佇列為空且未結束，則取下一動 Player/NPC Pick
+- 可以對 Command 註冊 Handler
 
-### Record
-- RecordClick(index, playerID)
-- RecordMatched(indices, playerID)
+#### GameState
+- CellMarked, CellGrouped, IsClear
 
-### Tricker
+#### Turn
+- 向其註冊操作，必以輪循方式執行
+
+### NPCs
+- 定義 NPC 操作
+- 會記錄 CellMarked, CellGrouped 訊息，並以機率做 Pick
+
+### Players
+- 取得玩家輸入
+
+### Records
+- 紀錄 CellMarked, CellGrouped 與操作對象
+
+### Tricks
 - 計數為 X的倍數時 Trick 成立
 
-### Scorer
-- 公式計算
+
+
+
 
 ## Application
 
