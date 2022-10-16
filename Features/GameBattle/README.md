@@ -4,6 +4,14 @@
 - Trigger - TrickSwap : 將兩個 Cell 做交換
 - Trigger - BonusPick : 額外獲得一次 Pick
 
+## Flow
+- 開始遊戲
+- 從 Player/NPC 取得 2 輸入 (無關 Mark 狀態)
+- 進行配對 並等待 配對處理事件
+- 進行檢查 (Trick)
+- 循環
+
+
 ## Modules
 
 ### GameCores
