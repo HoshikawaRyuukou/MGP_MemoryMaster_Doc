@@ -4,7 +4,7 @@
 - 並在結算時給予個別獎勵
 
 ## TurnLoop
-- 提供回合控制介面(ITurnControl, IIdleControl), SetIdleControl
+- 提供回合控制介面 ITurnControl, IPickControl
 - 控制介面的組成包含(可執行判定/主互動/結算獎勵)
 - 採輪循方式對模塊介面進行可執行判定運算，依序執行，直到遊戲結束
 
@@ -27,7 +27,11 @@
 - 結算根據難度給予獎勵
 
 
-
+## Flow
+- 玩家1 輸入
+- 檢查 GameClear, TrickSwap
+- 玩家2 輸入
+- 檢查 GameClear, TrickSwap
 
 -----------------------------------------------
 ## Application
