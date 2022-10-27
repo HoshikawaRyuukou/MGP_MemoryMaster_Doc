@@ -1,46 +1,38 @@
-# GameBattle
-- 主循環是以 Player 與 NPC 交互做 Pick
-- Pick 可能觸發 Trigger
-- Trigger - TrickSwap : 將兩個 Cell 做交換
-- Trigger - BonusPick : 額外獲得一次 Pick
+# Feature
+- 遊戲流程採**回合制**
+- 開局可選擇遊玩**回合模塊**
 
-## Flow
-- 開始遊戲
-- 從 Player/NPC 取得 2 輸入 (無關 Mark 狀態)
-- 進行配對 並等待 配對處理事件
-- 進行檢查 (Trick)
-- 循環
-
+## TurnLoop
+- 採輪循方式決定，直到遊戲結束
+- 對模塊介面進行互動判定運算，依序執行
 
 ## Modules
+- 回合模塊之間獨立不相關
+- 模塊關心的是Board事件
+- 模塊之間可以設計的會互相影響(透過應用層，模塊A的結果將導致模塊B發生流程變化)，只是在這個案例中，不希望弄到太複雜。
+- 回合模組的組成包含(可互動判定/主互動與結算獎勵)，
+- 回合模塊可實作回合介面 (IMarkedCallback/IGroupedCallback)
+- 回合模塊的流程控制由應用層處理，有以下模組
 
-### GameCores
-- 操作以 Turn 的方式進行
-- 預設第一動為 Player/NPC Pick
-- Turn 執行期間觸發的 Command 將放入佇列中，並作為之後的 Turn 執行
-- 當佇列為空且未結束，則取下一動 Player/NPC Pick
-- 可以對 Command 註冊 Handler
+### Player (預設不可選)
+- 玩家點擊指定個對象，根據結果給予及時獎勵
+- 並記錄玩家點擊/配對數值
+- 結算數值給予獎勵
 
-#### GameState
-- CellMarked, CellGrouped, IsClear
+### NPC
+- 可選先後手
+- NPC點擊指定個對象
+- 記錄明牌
+- 結算根據輸贏給予獎勵
 
-#### Turn
-- 向其註冊操作，必以輪循方式執行
-
-### NPCs
-- 定義 NPC 操作
-- 會記錄 CellMarked, CellGrouped 訊息，並以機率做 Pick
-
-### Players
-- 取得玩家輸入
-
-### Records
-- 紀錄 CellMarked, CellGrouped 與操作對象
-
-### Tricks
-- 計數為 X的倍數時 Trick 成立
+### TrickSwap
+- 每當一定回合數觸發一次，交換檯面上的兩個對象
+- 結算根據難度給予獎勵
 
 
+
+
+-----------------------------------------------
 
 
 
