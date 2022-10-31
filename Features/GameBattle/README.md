@@ -1,3 +1,31 @@
+## Core
+- Game與NPC之間僅靠 CellGrouped 聯繫，Game只在乎誰(ID)點了哪裡(Index)，產生了怎樣的結果(CellGrouped)
+
+### Game
+- 創建盤面
+- 點擊盤面 | Evt: CellGrouped
+- 查詢盤面
+
+### TurnLoop
+- 回合輪轉邏輯
+
+### NPC
+- 紀錄盤面
+- 產生點擊輸入
+
+### Player
+- 玩家的點擊規則
+
+### PlayerRecord
+- 玩家的數據
+
+### Scorer
+- 計分規則
+
+
+
+
+
 # Feature
 - 遊戲流程採**回合制**
 - 開局可選擇遊玩**回合模塊**
