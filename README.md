@@ -10,12 +10,13 @@
 - 待實現功能
 
 ## System
-- 架構
-- 服務
-- 模組
-  - Lobby
-  - User
+- Architecture 架構
+- Components 組件可區分的系統部件，提供和封裝實現特性所需的通用功能
+  - MainMenu
+  - Users
   - GameShared
+- Feature 功能是系統的那些直接滿足某些用戶需求的行為 
+  - Lobby
   - ClassicGame
   - BattleGame
   - CollectionAlbum
