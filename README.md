@@ -1,5 +1,8 @@
 # MGP MemoryMaster Doc
 
+## Google Play
+[Link](https://play.google.com/store/apps/details?id=com.miniaturegardenstudio.memorymaster&hl=zh_TW)
+
 ## Product
 - [說明文件](https://github.com/HoshikawaRyuukou/MGP_MemoryMaster_Doc/blob/main/Product/%E8%AA%AA%E6%98%8E%E6%96%87%E4%BB%B6.md)
 - [待實現功能](https://github.com/HoshikawaRyuukou/MGP_MemoryMaster_Doc/blob/main/Product/%E5%BE%85%E5%AF%A6%E7%8F%BE%E5%8A%9F%E8%83%BD.md)
