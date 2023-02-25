@@ -4,7 +4,8 @@
 - 可以使用 Core 提供的操作，也可以引入額外所需的外部服務(仍需做 DIP )
 
 基本形如下圖
-![Module_Service](images/Module_Feature.png)
+
+![Module_Feature](images/Module_Feature.PNG)
 
 ## Extra
 
