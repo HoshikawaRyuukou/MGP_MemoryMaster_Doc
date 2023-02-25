@@ -2,7 +2,8 @@
 應用程式是由許多不同模組之間協同運作的，大多數的模組都使用 Clean Architecture，該架構說明 <詳見>
 
 本專案採用的模組依賴關係如下
-![Module_App01](images/Modularization.png)
+
+![Module_App01](images/Modularization.PNG)
 
 ## App Module
 - 應用程式的入口點
